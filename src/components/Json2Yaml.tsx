@@ -9,22 +9,43 @@ import yaml from 'yaml';
  * @returns
  */
 const Json2Yaml = () => {
+  const types = [
+    { key: 'json2yaml', value: 'json2yaml', text: 'Json⇒Yaml' },
+    { key: 'yaml2json', value: 'yaml2json', text: 'Yaml⇒Json' },
+  ];
 
-  const [from, setFrom] = useState<string>("");
-  const [to, setTo] = useState<string>("");
+  const [from, setFrom] = useState<string>('');
+  const [to, setTo] = useState<string>('');
+  const [type, setType] = useState<'json2yaml' | 'yaml2json'>('json2yaml');
 
-  const conver = (e:any) => {
+  const conver = (e: any) => {
     setFrom(e.target.value);
-  } 
+  };
+
+  const changeType = (e: any, data: any) => {
+    console.log(data.value);
+    setType(data.value);
+    setFrom('');
+    setTo('');
+  };
 
   useEffect(() => {
-
-    try{      
-      const doc = new yaml.Document();
-      doc.contents = JSON.parse(from);
-      setTo(doc.toString());
-    }catch(e){
-      setTo("Jsonではありません")
+    if (from === '') {
+      setTo('');
+    } else if (type === 'json2yaml') {
+      try {
+        const doc = new yaml.Document();
+        doc.contents = JSON.parse(from);
+        setTo(doc.toString());
+      } catch (e) {
+        setTo('Jsonではありません');
+      }
+    } else {
+      try {
+        setTo(JSON.stringify(yaml.parse(from), null, '\t'));
+      } catch (e) {
+        setTo('Yamlではありません');
+      }
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -33,18 +54,26 @@ const Json2Yaml = () => {
   return (
     <Segment>
       <Form>
+        <Form.Select value={type} options={types} width={2} onChange={changeType} />
         <Grid columns={2}>
           <Divider vertical>⇒</Divider>
-
           <Grid.Row verticalAlign="middle">
             <Grid.Column>
-              <TextArea placeholder="Json" style={{ minHeight: 300 }} value={from}
-              onChange={(e) => conver(e)}
+              <TextArea
+                placeholder={type === 'json2yaml' ? 'Json' : 'Yaml'}
+                style={{ minHeight: 300 }}
+                value={from}
+                onChange={(e) => conver(e)}
               />
             </Grid.Column>
 
             <Grid.Column>
-              <TextArea placeholder="Yaml" style={{ minHeight: 300 }} value={to} readonly={true} />
+              <TextArea
+                placeholder={type === 'json2yaml' ? 'Yaml' : 'Json'}
+                style={{ minHeight: 300 }}
+                value={to}
+                readonly={true}
+              />
             </Grid.Column>
           </Grid.Row>
         </Grid>
