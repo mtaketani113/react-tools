@@ -27,7 +27,7 @@ const HeaderMenu = () => {
         as={Link}
         to="json2yaml"
       >
-        yaml ⇔ json
+        json ⇔ yaml
       </Menu.Item>
     </Menu>
   );
