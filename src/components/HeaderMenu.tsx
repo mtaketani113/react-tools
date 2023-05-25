@@ -35,6 +35,22 @@ const HeaderMenu = () => {
       >
         json ⇔ yaml
       </Menu.Item>
+      <Menu.Menu position="right">
+        <Menu.Item
+          name="問い合わせ先"
+          active={activeItem === '/inquiry'}
+          onClick={() => setActiveItem('/inquiry')}
+          as={Link}
+          to="inquiry"
+        ></Menu.Item>
+        <Menu.Item
+          name="プライバシーポリシー"
+          active={activeItem === '/privacyPolicy'}
+          onClick={() => setActiveItem('/privacyPolicy')}
+          as={Link}
+          to="privacyPolicy"
+        ></Menu.Item>
+      </Menu.Menu>
     </Menu>
   );
 };

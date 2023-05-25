@@ -63,6 +63,7 @@ const Json2Yaml = () => {
                 placeholder={type === 'json2yaml' ? 'Json' : 'Yaml'}
                 style={{ minHeight: 300 }}
                 value={from}
+                data-testid="jsonTextArea"
                 onChange={(e) => conver(e)}
               />
             </Grid.Column>
@@ -72,7 +73,8 @@ const Json2Yaml = () => {
                 placeholder={type === 'json2yaml' ? 'Yaml' : 'Json'}
                 style={{ minHeight: 300 }}
                 value={to}
-                readonly={true}
+                data-testid="yamlTextArea"
+                readOnly={true}
               />
             </Grid.Column>
           </Grid.Row>
