@@ -19,13 +19,11 @@ const Json2Yaml = () => {
 
   useEffect(() => {
 
-    try{
-      
+    try{      
       const doc = new yaml.Document();
       doc.contents = JSON.parse(from);
-      console.log(doc.toString())
       setTo(doc.toString());
-    }catch(Exception){
+    }catch(e){
       setTo("Jsonではありません")
     }
 
