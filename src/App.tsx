@@ -1,26 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Header } from './components/index';
+import { HeaderMenu, Home, Json2Yaml } from './components/index';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeaderMenu />
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* ホーム */}
+        <Route path="/json2yaml" element={<Json2Yaml />} /> {/* Json Yaml変換 */}
+      </Routes>
     </div>
   );
 }

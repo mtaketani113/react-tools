@@ -8,18 +8,24 @@ import { Link } from 'react-router-dom';
  * @param param0
  * @returns
  */
-const Header = () => {
+const HeaderMenu = () => {
   const [activeItem, setActiveItem] = useState<string>('home');
 
   return (
     <Menu pointing>
-      <Menu.Item name="home" active={activeItem === 'home'} onClick={() => setActiveItem('home')} />
       <Menu.Item
-        name="yaml2json"
-        active={activeItem === 'yamlAndJson'}
-        onClick={() => setActiveItem('yamlAndJson')}
+        name="home"
+        active={activeItem === 'home'}
+        onClick={() => setActiveItem('home')}
         as={Link}
-        to="yaml2json"
+        to="/"
+      />
+      <Menu.Item
+        name="json2yaml"
+        active={activeItem === 'json2yaml'}
+        onClick={() => setActiveItem('json2yaml')}
+        as={Link}
+        to="json2yaml"
       >
         yaml ⇔ json
       </Menu.Item>
@@ -27,4 +33,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderMenu;
