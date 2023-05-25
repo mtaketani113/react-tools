@@ -1,22 +1,17 @@
-import logo from '../logo.svg';
+import { Container } from 'semantic-ui-react';
 
 /**
- * ヘッダー部のJSX
+ * HomeのJSX
  *
  * @param param0
  * @returns
  */
 const Home = () => {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-        Learn React
-      </a>
-    </header>
+    <Container textAlign="left">
+      <li>JavaScriptのツール集です。Reactで作成しています。（作成中）</li>
+      <li><a href="https://react.semantic-ui.com/">semantic ui react</a>を利用しています。</li>
+    </Container>
   );
 };
 
