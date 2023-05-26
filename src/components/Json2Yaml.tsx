@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Divider, Form, Grid, Segment, TextArea } from 'semantic-ui-react';
 import yaml from 'yaml';
 
@@ -52,35 +53,42 @@ const Json2Yaml = () => {
   }, [from]);
 
   return (
-    <Segment>
-      <Form>
-        <Form.Select value={type} options={types} width={2} onChange={changeType} />
-        <Grid columns={2}>
-          <Divider vertical>⇒</Divider>
-          <Grid.Row verticalAlign="middle">
-            <Grid.Column>
-              <TextArea
-                placeholder={type === 'json2yaml' ? 'Json' : 'Yaml'}
-                style={{ minHeight: 300 }}
-                value={from}
-                data-testid="jsonTextArea"
-                onChange={(e) => conver(e)}
-              />
-            </Grid.Column>
+    <>
+      <HelmetProvider>
+        <Helmet>
+          <title>Json ⇔ Yaml | JavaScript Tools</title>
+        </Helmet>
+      </HelmetProvider>
+      <Segment>
+        <Form>
+          <Form.Select value={type} options={types} width={2} onChange={changeType} />
+          <Grid columns={2}>
+            <Divider vertical>⇒</Divider>
+            <Grid.Row verticalAlign="middle">
+              <Grid.Column>
+                <TextArea
+                  placeholder={type === 'json2yaml' ? 'Json' : 'Yaml'}
+                  style={{ minHeight: 300 }}
+                  value={from}
+                  data-testid="jsonTextArea"
+                  onChange={(e) => conver(e)}
+                />
+              </Grid.Column>
 
-            <Grid.Column>
-              <TextArea
-                placeholder={type === 'json2yaml' ? 'Yaml' : 'Json'}
-                style={{ minHeight: 300 }}
-                value={to}
-                data-testid="yamlTextArea"
-                readOnly={true}
-              />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Form>
-    </Segment>
+              <Grid.Column>
+                <TextArea
+                  placeholder={type === 'json2yaml' ? 'Yaml' : 'Json'}
+                  style={{ minHeight: 300 }}
+                  value={to}
+                  data-testid="yamlTextArea"
+                  readOnly={true}
+                />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Form>
+      </Segment>
+    </>
   );
 };
 
