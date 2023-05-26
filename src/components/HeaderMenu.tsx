@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Menu } from 'semantic-ui-react';
 import { Link, useLocation } from 'react-router-dom';
+import usePageTracking from './useTracking';
 
 /**
  * ヘッダー部のJSX
@@ -10,6 +11,7 @@ import { Link, useLocation } from 'react-router-dom';
  */
 const HeaderMenu = () => {
   const [activeItem, setActiveItem] = useState<string>('/');
+  usePageTracking();
 
   const location = useLocation();
   useEffect(() => {
