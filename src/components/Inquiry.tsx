@@ -12,12 +12,6 @@ const Inquiry = () => {
       >
         <TableBody>
           <TableRow>
-            <TableCell>管理者</TableCell>
-            <TableCell>
-              監督の<span style={{ fontWeight: 'bold' }}>竹谷 匡玄</span>が管理しています。
-            </TableCell>
-          </TableRow>
-          <TableRow>
             <TableCell>問い合わせ</TableCell>
             <TableCell>
               サイトの問い合わせはTwitterにお願いします。 <br />
@@ -32,7 +26,7 @@ const Inquiry = () => {
               改善依頼
             </TableCell>
             <TableCell>
-              Githubの<a href="https://github.com/mtaketani113/omu-karate-page/issues/new">Issue</a>
+              Githubの<a href="https://github.com/mtaketani113/react-tools/issues/new">Issue</a>
               にお願いします。
             </TableCell>
           </TableRow>
