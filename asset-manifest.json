@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-tools/static/css/main.ffa5d6ff.css",
-    "main.js": "/react-tools/static/js/main.468d75d7.js",
+    "main.js": "/react-tools/static/js/main.dc506a3b.js",
     "static/js/787.08864247.chunk.js": "/react-tools/static/js/787.08864247.chunk.js",
     "static/media/brand-icons.svg": "/react-tools/static/media/brand-icons.6729d29753e000c17489.svg",
     "static/media/icons.svg": "/react-tools/static/media/icons.62d9dae4e0040e81c980.svg",
@@ -21,11 +21,11 @@
     "static/media/outline-icons.woff2": "/react-tools/static/media/outline-icons.687a4990ea22bb1a49d4.woff2",
     "index.html": "/react-tools/index.html",
     "main.ffa5d6ff.css.map": "/react-tools/static/css/main.ffa5d6ff.css.map",
-    "main.468d75d7.js.map": "/react-tools/static/js/main.468d75d7.js.map",
+    "main.dc506a3b.js.map": "/react-tools/static/js/main.dc506a3b.js.map",
     "787.08864247.chunk.js.map": "/react-tools/static/js/787.08864247.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ffa5d6ff.css",
-    "static/js/main.468d75d7.js"
+    "static/js/main.dc506a3b.js"
   ]
 }
