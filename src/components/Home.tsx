@@ -13,7 +13,7 @@ const Home = () => {
       <HelmetProvider>
         <Helmet>
           <title>JavaScript Tools</title>
-          <meta name="description" content="JavaScriptのツール集です。Reactで実装しています。"/>
+          <meta name="description" content="JavaScriptのツール集です。Reactで実装しています。" />
         </Helmet>
       </HelmetProvider>
       <Container textAlign="left">

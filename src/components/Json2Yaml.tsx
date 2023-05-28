@@ -78,7 +78,10 @@ const Json2Yaml = () => {
       <HelmetProvider>
         <Helmet>
           <title>Json ⇔ Yaml | JavaScript Tools</title>
-          <meta name="description" content="JsonとYamlを相互に変換するツールです。Reactで実装しています。"/>
+          <meta
+            name="description"
+            content="JsonとYamlを相互に変換するツールです。Reactで実装しています。"
+          />
         </Helmet>
       </HelmetProvider>
       <Segment>
