@@ -43,6 +43,7 @@ const QRCodeReader = () => {
       <HelmetProvider>
         <Helmet>
           <title>QRコードリーダー | JavaScript Tools</title>
+          <meta name="description" content="QRコードリーダーです。ReactのuseZxingで実装しています。"/>
         </Helmet>
       </HelmetProvider>
       <Container>

@@ -18,6 +18,7 @@ const QRCodeCreate = () => {
       <HelmetProvider>
         <Helmet>
           <title>QRコード生成 | JavaScript Tools</title>
+          <meta name="description" content="入力した文字をQRコードに変換するツールです。Reactで実装しています。"/>
         </Helmet>
       </HelmetProvider>
       <Container>
