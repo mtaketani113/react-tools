@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import {
   FooterMenu,
@@ -9,8 +9,22 @@ import {
   PrivacyPolicy,
 } from './components/index';
 import { Route, Routes } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
+
+declare global {
+  interface Window {
+    adsbygoogle: any;
+  }
+}
 
 function App() {
+  useEffect(() => {
+    if (!window) {
+      return;
+    } // SSR 処理中は skip
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.adsbygoogle.push({});
+  });
   return (
     <div className="App">
       <HeaderMenu />
@@ -20,6 +34,16 @@ function App() {
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} /> {/* Privacy Policy */}
         <Route path="/inquiry" element={<Inquiry />} /> {/* 問い合わせ先 */}
       </Routes>
+      <Container>
+        <ins
+          className={'adsbygoogle'} //''はバッククォートに置き換えてください。$直後のスペースは不要です。
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-7157586794981334"
+          data-ad-slot="7436630218"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </Container>
       <FooterMenu />
     </div>
   );
