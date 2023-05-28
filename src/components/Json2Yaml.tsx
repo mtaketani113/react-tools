@@ -127,7 +127,7 @@ const Json2Yaml = () => {
                 inverted
                 trigger={
                   <Form.Button onClick={() => copyTextToClipboard(to)} icon labelPosition="right">
-                    変換結果にコピー
+                    変換結果をコピー
                     <Icon name={iconName} />
                   </Form.Button>
                 }
