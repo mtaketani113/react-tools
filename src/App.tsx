@@ -7,6 +7,8 @@ import {
   Inquiry,
   Json2Yaml,
   PrivacyPolicy,
+  QRCodeCreate,
+  QRCodeReader,
 } from './components/index';
 import { Route, Routes } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
@@ -31,6 +33,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} /> {/* ホーム */}
         <Route path="/json2yaml" element={<Json2Yaml />} /> {/* Json Yaml変換 */}
+        <Route path="/qrCodeReader" element={<QRCodeReader />} /> {/* QRコードリーダ */}
+        <Route path="/qrCodeCreate" element={<QRCodeCreate />} /> {/* QRコード生成 */}
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} /> {/* Privacy Policy */}
         <Route path="/inquiry" element={<Inquiry />} /> {/* 問い合わせ先 */}
       </Routes>

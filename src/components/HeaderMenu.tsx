@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu } from 'semantic-ui-react';
+import { Dropdown, Menu } from 'semantic-ui-react';
 import { Link, useLocation } from 'react-router-dom';
 import usePageTracking from './useTracking';
 
@@ -20,7 +20,7 @@ const HeaderMenu = () => {
   }, []);
 
   return (
-    <Menu pointing>
+    <Menu>
       <Menu.Item
         name="home"
         active={activeItem === '/'}
@@ -37,6 +37,28 @@ const HeaderMenu = () => {
       >
         json ⇔ yaml
       </Menu.Item>
+      <Dropdown item text="QR" simple>
+        <Dropdown.Menu>
+          <Dropdown.Item
+            name="qrCodeReader"
+            active={activeItem === '/qrCodeReader'}
+            onClick={() => setActiveItem('/qrCodeReader')}
+            as={Link}
+            to="qrCodeReader"
+          >
+            QRコードリーダ
+          </Dropdown.Item>
+          <Dropdown.Item
+            name="qrCodeReader"
+            active={activeItem === '/qrCodeCreate'}
+            onClick={() => setActiveItem('/qrCodeCreate')}
+            as={Link}
+            to="qrCodeCreate"
+          >
+            QRコード生成
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
     </Menu>
   );
 };
