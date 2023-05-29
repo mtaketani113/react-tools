@@ -38,7 +38,7 @@ function App() {
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} /> {/* Privacy Policy */}
         <Route path="/inquiry" element={<Inquiry />} /> {/* 問い合わせ先 */}
       </Routes>
-      <Container>
+      <Container style={{ marginTop: '3em'}}>
         <ins
           className={'adsbygoogle'} //''はバッククォートに置き換えてください。$直後のスペースは不要です。
           style={{ display: 'block' }}
