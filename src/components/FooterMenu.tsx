@@ -21,13 +21,12 @@ const FooterMenu = () => {
         </List>
         <List horizontal inverted link size="huge">
           <List.Item as="a" href="https://twitter.com/mtaketani113">
-            <Icon name='twitter' />
+            <Icon name="twitter" />
           </List.Item>
           <List.Item as="a" href="https://github.com/mtaketani113/react-tools">
-            <Icon name='github' />
+            <Icon name="github" />
           </List.Item>
         </List>
-
       </Container>
     </Segment>
   );
