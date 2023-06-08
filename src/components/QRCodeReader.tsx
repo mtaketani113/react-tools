@@ -50,7 +50,7 @@ const QRCodeReader = () => {
         </Helmet>
       </HelmetProvider>
       <Container>
-        <video ref={ref} />
+        <video ref={ref}  width="80%"/>
         <p>
           <span>Last result:</span>
           <span>{result}</span>
